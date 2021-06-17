@@ -49,7 +49,7 @@ app.get("/total", (req, res) => {
 
 // 👉 Replace this with auth middleware 👈
 
-app.get("/reports", (req, res) => {
+app.get("/reports", requiredScopes('read:reports'), (req, res) => {
   res.send(expenses);
 });
 
